@@ -1,6 +1,6 @@
 #+TITLE: Dev Notes
 
-Deployed live on https://colony.mostlyvoid.xyz - on Cloudflare Pages so virtually all over the globe on the edge - with amazing fast load time.
+Deployed live on https://colony.mostlyvoid.xyz - on Cloudflare Pages so virtually all over the globe on the edge - with extremely fast load time.
 
 * Running Locally
 #+begin_src fish
@@ -47,17 +47,6 @@ I decided to display the full date string cause just the date and the month seem
 ** Add tests
 ** Some extra CSS
 
-* Tasks
-** DONE refactor
-** DONE add types everywhere
-** DONE fix css
-** DONE deploy on cloudflare pages
-** DONE set up DNS on my domain
-** DONE add eslint
-** DONE add loading message
-** DONE replace Jdenticon with react-blockies
-** DONE fix amount value
-** DONE figure out all async and promise stuff
 
 * App Flow
 - retrieve data for each event type using the API
