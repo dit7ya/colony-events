@@ -22,7 +22,10 @@ export function App() {
 	if (loadingFailed) {
 		return (
 			<div className={styles.loading}>
-				<h6>Fetching events colony failed.</h6>
+				<h6>
+					Fetching colony events failed. If you are on Firefox, try switching to
+					a Chromium based browser.
+				</h6>
 			</div>
 		);
 	}
