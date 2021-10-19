@@ -1,4 +1,4 @@
-export type possibleEventNames =
+export type PossibleEventNames =
   | "PayoutClaimed"
   | "ColonyInitialised"
   | "ColonyRoleSet"

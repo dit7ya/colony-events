@@ -1,5 +1,5 @@
-import * as styles from "../styles.module.css";
 import Blockies from "react-blockies";
+import * as styles from "../styles.module.css";
 
 export interface EventProp {
   id?: string;

@@ -7,20 +7,29 @@ import { EventProp } from "./components/EventItem";
 
 export function App() {
   const [events, setEvent] = useState<EventProp[]>();
+  const [loadingFailed, setLoadingFailed] = useState(false);
 
   useEffect(() => {
-    getAllFormattedEvents().then((data) => {
-      setEvent(data);
-    });
+    getAllFormattedEvents()
+      .then((data) => {
+        setEvent(data);
+      })
+      .catch(() => setLoadingFailed(true));
   }, []);
 
-  return events ? (
-    <EventList events={events} />
-  ) : (
-    <div className={styles.loading}>
-      <p>Loading events - it might take upto 30 seconds... </p>
-    </div>
-  );
-  /* return events && <EventList events={events} />; */
-  /* return events; */
+  if (loadingFailed) {
+    return (
+      <div className={styles.loading}>
+        <h6>Fetching events colony failed.</h6>
+      </div>
+    );
+  } else {
+    return events ? (
+      <EventList events={events} />
+    ) : (
+      <div className={styles.loading}>
+        <h6>Loading events - it might take upto 30 seconds... </h6>
+      </div>
+    );
+  }
 }

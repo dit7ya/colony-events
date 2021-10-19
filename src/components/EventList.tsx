@@ -1,5 +1,5 @@
-import { EventItem, EventProp } from "./EventItem";
 import * as styles from "../styles.module.css";
+import { EventItem, EventProp } from "./EventItem";
 
 export const EventList = (props: { events: EventProp[] }) => {
   return (

@@ -6,32 +6,26 @@ specifiers:
   '@types/react-dom': ^17.0.9
   '@typescript-eslint/eslint-plugin': ^5.1.0
   '@typescript-eslint/parser': ^5.1.0
-  blockies-ts: ^1.0.0
   eslint: ^8.0.1
   eslint-config-airbnb-typescript: ^14.0.1
   eslint-config-alloy: ^4.4.0
   ethers: '4'
-  modern-normalize: ^1.1.0
   nanoid: ^3.1.30
   parcel: ^2.0.0
   postcss: ^8.2.1
   react: ^17.0.2
   react-blockies: ^1.4.1
   react-dom: ^17.0.2
-  react-jdenticon: ^0.0.9
   typescript: ^4.4.4
   xo: ^0.45.0
 
 dependencies:
   '@colony/colony-js': 4.0.2_ethers@4.0.49
-  blockies-ts: 1.0.0
   ethers: 4.0.49
-  modern-normalize: 1.1.0
   nanoid: 3.1.30
   react: 17.0.2
   react-blockies: 1.4.1_react@17.0.2
   react-dom: 17.0.2_react@17.0.2
-  react-jdenticon: 0.0.9_react@17.0.2
 
 devDependencies:
   '@types/react': 17.0.30
@@ -1187,6 +1181,7 @@ packages:
 
   /@types/node/16.11.0:
     resolution: {integrity: sha512-8MLkBIYQMuhRBQzGN9875bYsOhPnf/0rgXGo66S2FemHkhbn9qtsz9ywV1iCG+vbjigE4WUNVvw37Dx+L0qsPg==}
+    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -1711,10 +1706,6 @@ packages:
       readable-stream: 3.6.0
     dev: true
 
-  /blockies-ts/1.0.0:
-    resolution: {integrity: sha512-mL9NO/FjYbFjaSDA5tw/qkUwEXrBG1bHSoPhAFG9CAzDaHTwQHzvYByAYUBmnqYciFsJvdxWKGtyOLgaSKoUkA==}
-    dev: false
-
   /bn.js/4.12.0:
     resolution: {integrity: sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA==}
 
@@ -1882,10 +1873,6 @@ packages:
   /caniuse-lite/1.0.30001267:
     resolution: {integrity: sha512-r1mjTzAuJ9W8cPBGbbus8E0SKcUP7gn03R14Wk8FlAlqhH9hroy9nLqmpuXlfKEw/oILW+FGz47ipXV2O7x8lg==}
     dev: true
-
-  /canvas-renderer/2.1.1:
-    resolution: {integrity: sha512-/V0XetN7s1Mk3NO7x2wxPZYv0pLMQtGAhecuOuKR88beiYCUle1AbCcFZNLu+4NVzi9RVHS0rXtIgzPEaKidLw==}
-    dev: false
 
   /caseless/0.12.0:
     resolution: {integrity: sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=}
@@ -4078,14 +4065,6 @@ packages:
       minimatch: 3.0.4
     dev: true
 
-  /jdenticon/2.2.0:
-    resolution: {integrity: sha512-WGqwpjN9pab/Sah9pGnFH5tQc3HF3WbLV/tPVbykvk5nuAkxG/zhzQYWC2owvpnS+/A0HmlSx35rtY8kyN+x7Q==}
-    hasBin: true
-    dependencies:
-      '@types/node': 16.11.0
-      canvas-renderer: 2.1.1
-    dev: false
-
   /js-sha3/0.5.7:
     resolution: {integrity: sha1-DU/9gALVMzqrr0oj7tL2N0yfKOc=}
     dev: false
@@ -4525,11 +4504,6 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dev: true
-
-  /modern-normalize/1.1.0:
-    resolution: {integrity: sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==}
-    engines: {node: '>=6'}
-    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
@@ -5636,16 +5610,6 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: false
-
-  /react-jdenticon/0.0.9_react@17.0.2:
-    resolution: {integrity: sha512-NuAoIjNBoL5VpPgRXl52b8IwF5nOEK+imn/9usCslaJlg5qgiUjXw0lVLLI1w19cjPaJo952kjnpC2CtokcTXA==}
-    peerDependencies:
-      react: ^16.8.0
-    dependencies:
-      jdenticon: 2.2.0
-      prop-types: 15.7.2
-      react: 17.0.2
     dev: false
 
   /react-refresh/0.9.0:

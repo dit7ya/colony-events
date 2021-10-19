@@ -15,7 +15,7 @@ import {
   ParsedColonyRoleSetLog,
   ParsedLog,
   ParsedPayoutEventLog,
-  possibleEventNames,
+  PossibleEventNames,
 } from "./types";
 
 const colonyTokenMapping: { [index: string]: string } = {
@@ -26,7 +26,7 @@ const colonyTokenMapping: { [index: string]: string } = {
 };
 
 const getFilteredEvents = async (
-  filterName: possibleEventNames
+  filterName: PossibleEventNames
 ): Promise<ParsedLog[]> => {
   const colonyClient: ColonyClient = await getColonyClient();
   const eventFilter = colonyClient.filters[filterName]();
