@@ -1,0 +1,39 @@
+{
+  "source": "src/index.html",
+  "type": "module",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "lint": "eslint . --ext ts,tsx",
+    "xo": "xo"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.30",
+    "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-config-alloy": "^4.4.0",
+    "parcel": "^2.0.0",
+    "postcss": "^8.2.1",
+    "typescript": "^4.4.4",
+    "xo": "^0.45.0"
+  },
+  "dependencies": {
+    "@colony/colony-js": "^4.0.2",
+    "ethers": "4",
+    "nanoid": "^3.1.30",
+    "react": "^17.0.2",
+    "react-blockies": "^1.4.1",
+    "react-dom": "^17.0.2"
+  },
+  "name": "parcel-colony",
+  "version": "1.0.0",
+  "author": "dit7ya",
+  "license": "AGPL-3.0-or-later",
+  "description": "",
+  "xo": {
+    "space": true
+  }
+}

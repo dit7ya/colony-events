@@ -1,0 +1,50 @@
+#+TITLE: Dev Notes
+
+* Gotchas!
+
+** The RoleSet Event can have `revoked` as well as `assigned`
+this is not written in the readme but it is clear from here
+- https://github.com/JoinColony/colonyNetwork/blob/develop/contracts/colony/ColonyDataTypes.sol#L40-L43
+the `setTo` value represents whether assigned or revoked
+** The method for getting the date in the readme is full of traps!
+- the ~parsedLog~ does not contain info for the date
+  - apparently the colony initialization event should have had happened before everything else, right? but there are other events in the same block - so the ordering is unknown to me.
+** The CSS requirements in the README is not precise! If I follow the spec exactly it does not look like the given image.
+I am not a CSS person and I might very well be wrong.
+
+* App Flow
+
+** Data
+- retrieve data for each event type using the API
+- parse into the final desirable type
+- put into an array
+
+* Notes
+** Browser
+- I was having CORS issues with the Infura provider on Firefox. Using Ungoogled-Chromium for dev now.
+** ColonyJs
+- I am using the latest version as I was having some issues with the recommended one -^2.
+** Parcel v2
+- I am using Parcel v2 for this project, partly because there were some weird bugs in the Vite react-ts template, but also because it just had a stable release and I wanted to experiment with it.
+- It uses [[https://swc.rs/][swc]] (a fast JS-ecosystem compiler like Esbuild, but written in Rust).
+** CSS Modules
+- This is the first time I am using CSS modules - usually I go for WindiCSS (a faster Tailwind clone with lots of extra features)! However, seems like a CSS modules are really an ergonomic experience - and a very good choice for small projects.
+* Choices
+** Date
+I decided to display the full date string cause just the date and the month seems like not enough info.
+* What I would do if I had more time
+** Load Time
+- it takes a lot of time to load the data, mainly because there are multiple API calls for various things. I am sure optimizations can be made so that there are less API calls and it loads faster.
+- other kinds of possible optimizations -> use loading blocks for things like the date and load the entire app asynchronously
+** Refactor
+
+* Tasks
+** DONE refactor
+** DONE add types everywhere
+** DONE fix css
+** HOLD deploy on cloudflare pages
+** DONE add eslint
+** DONE add loading message
+** DONE replace Jdenticon with react-blockies
+** DONE fix amount value
+** DONE figure out all async and promise stuff
