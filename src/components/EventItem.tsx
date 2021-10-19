@@ -16,12 +16,16 @@ export const EventItem = ({
   const date = new Date(logTime);
   return (
     <div className={styles.eventItem}>
-      <div className={styles.avatar}>
-        <Blockies seed={avatarHash} size={9} scale={4} />{" "}
+      <div>
+        <Blockies
+          className={styles.avatar}
+          seed={avatarHash}
+          size={9}
+          scale={4}
+        />{" "}
       </div>
       <div>
         <div className={styles.eventDescription}>{description}</div>
-
         <div className={styles.eventDate}>
           <p>{date.toUTCString()}</p>
         </div>

@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
 
 .loading {
-  width: 700px;
+  max-width: 700px;
   margin: 100px auto;
   padding: 100px;
 }
 
 .eventList {
-  width: 700px;
+  max-width: 700px;
   margin: 50px auto;
   border-radius: 6px;
   background: white;
@@ -17,7 +17,6 @@
 
 .eventItem {
   margin: 1px;
-  width: 100%;
   height: 90px;
   background: white;
   display: flex;
@@ -36,20 +35,26 @@
 }
 
 .eventDescription {
-  width: 590px;
+  display: grid;
+}
+
+.eventDescription p {
+  padding-right: 20px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin-top: 24px;
+  margin-top: 25px;
   margin-bottom: 7px;
 }
 
-.eventDescription:hover {
-  overflow: visible;
-  white-space: normal;
+.eventDescription p:hover {
+  text-overflow: initial;
+  overflow: auto;
 }
 
 .avatar {
+  height: 37px;
+  width: 37px;
   margin-top: 27px;
   margin-bottom: 27px;
   margin-left: 20px;
