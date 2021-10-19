@@ -26,9 +26,9 @@ const colonyTokenMapping: Record<string, string> = {
 };
 
 const getFilteredEvents = async (
-	filterName: PossibleEventNames
+	filterName: PossibleEventNames,
+	colonyClient: ColonyClient
 ): Promise<ParsedLog[]> => {
-	const colonyClient: ColonyClient = await getColonyClient();
 	const eventFilter = colonyClient.filters[filterName]();
 	// Get the raw logs array
 	const eventLogs = await getLogs(colonyClient, eventFilter);
@@ -36,7 +36,7 @@ const getFilteredEvents = async (
 		eventLogs.map(async (event) => {
 			const logTime = await getBlockTime(
 				colonyClient.provider,
-				event.blockHash || "" // BlockHash might be undefined
+				event.blockHash ?? "" // BlockHash might be undefined
 			);
 			const transactionHash = event.transactionHash; // This is useful later on
 			return {
@@ -147,24 +147,28 @@ const getDomainId = (
 export const getAllFormattedEvents = async () => {
 	const colonyClient = await getColonyClient();
 
-	const payOutEvents = (await getFilteredEvents("PayoutClaimed")).map(
-		async (event) =>
-			formatPayoutEvent(colonyClient, event as ParsedPayoutEventLog)
+	const payOutEvents = (
+		await getFilteredEvents("PayoutClaimed", colonyClient)
+	).map(async (event) =>
+		formatPayoutEvent(colonyClient, event as ParsedPayoutEventLog)
 	);
 
-	const roleSetEvents = (await getFilteredEvents("ColonyRoleSet")).map(
-		async (event) => formatColonyRoleSetEvent(event as ParsedColonyRoleSetLog)
+	const roleSetEvents = (
+		await getFilteredEvents("ColonyRoleSet", colonyClient)
+	).map(async (event) =>
+		formatColonyRoleSetEvent(event as ParsedColonyRoleSetLog)
 	);
 
 	const colonyInitialisedEvents = (
-		await getFilteredEvents("ColonyInitialised")
+		await getFilteredEvents("ColonyInitialised", colonyClient)
 	).map(async (event) =>
 		formatColonyInitialisedEvent(event as ParsedColonyInitialisedLog)
 	);
 
-	const colonyDomainAddedEvents = (await getFilteredEvents("DomainAdded")).map(
-		async (event) =>
-			formatColonyDomainAddedEvent(event as ParsedColonyDomainAddedLog)
+	const colonyDomainAddedEvents = (
+		await getFilteredEvents("DomainAdded", colonyClient)
+	).map(async (event) =>
+		formatColonyDomainAddedEvent(event as ParsedColonyDomainAddedLog)
 	);
 
 	// Some of the initialisation, domain added, and role set event happened at the same time

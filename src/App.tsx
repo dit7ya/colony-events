@@ -31,7 +31,7 @@ export function App() {
 		<EventList events={events} />
 	) : (
 		<div className={styles.loading}>
-			<h6>Loading events - it might take upto 30 seconds... </h6>
+			<h6>Loading events - it might take upto 10-15 seconds... </h6>
 		</div>
 	);
 }

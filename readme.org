@@ -1,5 +1,7 @@
 #+TITLE: Dev Notes
 
+Deployed live on https://colony.mostlyvoid.xyz - on Cloudflare Pages so virtually all over the globe on the edge - with amazing fast load time.
+
 * Running Locally
 #+begin_src fish
 pnpm install
@@ -31,12 +33,16 @@ I decided to display the full date string cause just the date and the month seem
 ** CSS Modules
 - This is the first time I am using CSS modules - usually I go for WindiCSS (a faster Tailwind clone with lots of extra features). However, seems like a CSS modules are really an ergonomic experience in case of React (not much for Svelte cause styles in Svelte are automically local-scoped) - and a very good choice for small projects.
 * What I would do if I had more time
-** Load Time
-- it takes a lot of time to load the data, mainly because there are multiple API calls for various things. I am sure optimizations can be made so that there are less API calls and it loads faster.
+** SSR and prerender!
+- given that the entire site is essentially static with lots of API calls, it can be prerendered using something like https://github.com/prerender/prerender or even something like NextJS.
+** Reduce Load Time
+- it takes a lot of time to load the data, mainly because there are multiple API calls for various things. I am sure optimizations can be made so that there are less in number and parallel API calls and it loads faster.
 - other kinds of possible optimizations -> use loading blocks for things like the date and load the entire app asynchronously
 ** Refactor the codebase
 - extract generic fetching events into a cleaner function
+- refactor the formatting to EventProp so that there is a map over all events types instead of four functions
 - figure out if any of the provider supports batch queries
+- add more strict types everywhere, for example type the ~ColonyClient~ object
 
 ** Add tests
 ** Some extra CSS
